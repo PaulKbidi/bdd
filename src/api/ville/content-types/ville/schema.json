@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "villes",
+  "info": {
+    "singularName": "ville",
+    "pluralName": "villes",
+    "displayName": "Ville"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "secteur": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::secteur.secteur",
+      "inversedBy": "villes"
+    },
+    "restaurants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::restaurant.restaurant",
+      "mappedBy": "ville"
+    }
+  }
+}
